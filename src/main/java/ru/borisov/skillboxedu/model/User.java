@@ -1,6 +1,7 @@
 package ru.borisov.skillboxedu.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
@@ -28,9 +29,15 @@ public class User {
     private UUID id;
 
     @Column(unique = true)
+    @NotNull
     private String username;
+
+    @NotNull
     private String email;
+
+    @NotNull
     private String passwordHash;
+
     private String lastName;
     private String firstName;
     private String middleName;

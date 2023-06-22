@@ -5,9 +5,9 @@ SET search_path TO users_scheme, public;
 create table _user
 (
     id            UUID default gen_random_uuid() not null,
-    username      varchar(63),
-    password_hash varchar(255),
-    email         varchar(63),
+    username      varchar(63) not null unique,
+    password_hash varchar(255) not null,
+    email         varchar(63) not null,
     last_name     varchar(63),
     first_name    varchar(63),
     middle_name   varchar(63),
